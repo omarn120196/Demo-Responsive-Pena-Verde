@@ -1,0 +1,42 @@
+@use 'variables' as v;
+
+@mixin telefono {
+    @media (max-width: v.$telefono) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin escritorio {
+    @media (max-width: v.$escritorio) {
+        @content;
+    }    
+}
+
+@mixin escritorioHD {
+    @media (max-width: v.$escritorioHD) {
+        @content;
+    }    
+}
+
+@mixin escritorioXLL {
+    @media (max-width: v.$escritorioFHD) {
+        @content;
+    }    
+}
+
+@mixin grid($columnas, $espaciado) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espaciado;
+}
+
+@mixin resaltar($color, $grosor) {
+    color: $color;
+    font-weight: $grosor;
+}

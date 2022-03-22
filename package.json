@@ -1,0 +1,46 @@
+{
+  "name": "agile",
+  "version": "1.0.0",
+  "description": "Paquete scorm Agile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omar1296/Agile_Scorm.git"
+  },
+  "keywords": [
+    "Aguile",
+    "SCORM.",
+    "JS",
+    "GULP",
+    "SASS"
+  ],
+  "author": "Omar Alfredo Noyola Monroy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Omar1296/Agile_Scorm/issues"
+  },
+  "homepage": "https://github.com/Omar1296/Agile_Scorm#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "cssnano": "^5.1.4",
+    "gulp": "^4.0.2",
+    "gulp-cache": "^1.1.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser-js": "^5.2.2",
+    "postcss": "^8.4.8",
+    "sass": "^1.49.9"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "jquery": "^3.6.0",
+    "normalize.css": "^8.0.1"
+  }
+}

@@ -1,0 +1,121 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.menu__side{
+
+    width: 8rem;
+    height: 100%;
+    background: v.$azul;
+    position: fixed;
+    top: 8rem;
+    left: 0;
+    font-size: 1.8rem;
+    z-index: 21;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-right: 2rem solid v.$azul;
+    transition: all .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+    box-shadow: 14px -1px 4px -11px rgba(0,0,0,0.59);
+
+    .name__page{
+        color: v.$blanco;
+        padding: 2rem 3rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &.side__move{
+        width: 25rem;
+    }
+
+    @include m.tablet{
+        left: -25rem;
+        width: 25rem;
+
+        &.side__move{
+            left: 0rem;
+        }
+    }
+}
+
+.barra__progreso{
+    padding: 2rem 3rem;
+
+    .barra{
+        width: 100%;
+        height: .3rem;
+        background: v.$gris4;
+        margin-bottom: 1rem;
+        position: relative;
+
+        &::before{
+            content: '';
+            position: absolute;
+            background: v.$blanco;
+            width: 75%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    #progreso__mensaje{
+        font-size: 2rem;
+        color: v.$blanco;
+    }
+}
+
+.options__menu{
+    padding: 2rem 3rem;
+    position: absolute;
+    top: 18rem;
+
+    a{
+        color: v.$gris4;
+        cursor: default;
+        display: block;
+        position: relative;
+        transition: all .3s ease;
+
+        &:hover{
+            color: v.$blanco;
+        }
+
+        &.select{
+            color: v.$blanco;
+
+            &::before{
+                content: '';
+                width: .3rem;
+                height: 80%;
+                position: absolute;
+                top: 10%;
+                left: -3rem;
+                background: v.$blanco;
+            }
+        }
+
+        .option{
+            padding: 2rem 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            i{
+                cursor: pointer;
+            }
+
+            h4{
+                font-weight: 300;
+                cursor: pointer;
+            }
+        }
+    }
+}

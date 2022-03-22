@@ -1,0 +1,23 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.contenedor{
+
+    
+
+    #titulo_01{
+        color: v.$azul2;
+        text-align: center;
+    }
+
+    #parrafo_01{
+        font-size: 2rem;
+        color: v.$naranja;
+        text-align: justify;
+        margin-bottom: 2rem;
+    }
+
+    .cont_img01{
+        width: 30rem;
+    }
+}
