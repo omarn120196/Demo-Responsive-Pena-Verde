@@ -36,11 +36,23 @@
 
     h1{
         color: v.$azul;
+        @include m.telefono{
+            font-size: 2.4rem;
+        }
     }
 
     .logo{
         width: 15rem;
         height: 6rem;
         margin-right: 3rem;
+
+        @include m.tablet{
+            width: 10rem;
+        }
+
+        @include m.telefono{
+            width: 8rem;
+            height: 4.5rem;
+        }
     }
 }

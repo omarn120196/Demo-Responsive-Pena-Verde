@@ -40,3 +40,9 @@
     color: $color;
     font-weight: $grosor;
 }
+
+@mixin fondo($position) {
+    background-position: $position;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

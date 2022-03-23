@@ -11,13 +11,14 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: rgba(61, 137, 199, 0.5);
+    background: rgba(61, 137, 199, 0.699);
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
+    z-index: 5;
 
     
     @include m.tablet{
-        left: 20%;       
+        left: 30%;       
     }
 
     @include m.telefono{
