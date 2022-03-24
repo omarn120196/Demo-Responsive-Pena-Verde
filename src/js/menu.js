@@ -4,6 +4,9 @@ const btn_menu = document.querySelector('#hamburger');
 const header = document.querySelector('.header');
 const contenido = document.querySelector('.contenido');
 const mensajePorcentaje = document.querySelector('#progreso__mensaje');
+const barra = document.querySelector('.barra');
+
+let menuAbierto = false;
 
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -11,17 +14,22 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function abirMenu() {
-    body.classList.toggle('body__move');
     side_menu.classList.toggle('side__move');
     header.classList.toggle('menu_salida');
     contenido.classList.toggle('redimensionar');
+    barra.classList.toggle('barra_ver');
+
+    if(!menuAbierto){
+        menuAbierto = true;
+    }
+    else{
+        menuAbierto = false;
+    }
 
     if(side_menu.classList.contains('side__move')){
         
         setTimeout(()=>{
-            mensajePorcentaje.innerHTML = `
-                75% Completado
-            `;
+            actualizarPorcentaje();
         }, 260);
     }
     else{
@@ -30,4 +38,16 @@ function abirMenu() {
         `;
     }
     
+}
+
+function actualizarPorcentaje(){
+    mensajePorcentaje.innerHTML = `
+        ${porcentaje}% Completado
+    `;
+}
+
+function verificarMenu(){
+    if(menuAbierto){
+        actualizarPorcentaje();
+    }
 }

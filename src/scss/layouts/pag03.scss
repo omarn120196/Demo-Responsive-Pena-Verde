@@ -10,7 +10,9 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row-reverse;
-    background: v.$verde;
+
+    background-image: linear-gradient(to top, #129a64e3 0%, #129a64e3 100%), url('/build/img/contenido/Pag03/fondo.svg');
+    @include m.fondo(center);
 
     @include m.tablet{
         flex-direction: column;
@@ -121,12 +123,28 @@
             align-items: flex-end;
             margin-bottom: 3.2rem;
             box-shadow: 10px 11px 5px -4px rgba(0,0,0,0.75);
+            transition: animation .3s ease-in-out;
+            z-index: 12;
+
+            &:hover{
+                cursor: pointer;
+                animation: 1s balanceo 1;
+            }
 
             p{
                 font-size: 1rem;
                 text-align: center;
                 font-weight: 700;
                 padding-bottom: .5rem;
+            }
+
+            .pin{
+                position: absolute;
+                z-index: 11;
+                width: 3.2rem;
+                height: 3.2rem;
+                top: -1.2rem;
+                left: 30%;
             }
 
             &::before{
@@ -250,5 +268,18 @@
 
             @include m.fondo(center bottom);
         }
+    }
+}
+
+//Animaciones
+@keyframes balanceo {
+    20%{
+        transform: rotate(8deg);
+    }
+    40%, 80%{
+        transform: rotate(-8deg);
+    }
+    60%, 95%{
+        transform: rotate(8deg);
     }
 }

@@ -14,7 +14,7 @@
 
     <!-- JQuery -->
     <script src="build/js/jquery.min.js"></script>
-
+    <script src="build/js/jquery-ui.min.js"></script>
 </head>
 <body>
 
@@ -26,7 +26,7 @@
 
         <h1>Bienvenida</h1>
 
-        <figure class="logo">
+        <figure id="nav-logo" class="logo">
             <img src="build/img/logos/logo.png" alt="">
         </figure>
     </header>
@@ -39,7 +39,9 @@
         </div>
 
         <div class="barra__progreso">
-            <div class="barra"></div>
+            <div class="barra">
+                <div class="porcentaje"></div>
+            </div>
             <p id="progreso__mensaje"><i class="fa-light fa-percent" title="Progreso"></i></p>
         </div>
 
@@ -80,9 +82,9 @@
     
     <!-- Botones de navegacion -->
     <div class="btn_nav">
-        <i class="fa-solid fa-circle-arrow-left"></i>
-        <i class="fa-solid fa-house"></i>
-        <i class="fa-solid fa-circle-arrow-right"></i>
+        <i class="fa-solid fa-circle-arrow-left" id="atras"></i>
+        <i class="fa-solid fa-house" id="home"></i>
+        <i class="fa-solid fa-circle-arrow-right" id="adelante"></i>
     </div>
 
     <script src="build/js/bundle.js"></script>

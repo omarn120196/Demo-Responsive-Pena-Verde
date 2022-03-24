@@ -54,9 +54,13 @@
         background: v.$gris4;
         margin-bottom: 1rem;
         position: relative;
+        display: none;
 
-        &::before{
-            content: '';
+        &.barra_ver{
+            display: block;
+        }
+
+        .porcentaje{
             position: absolute;
             background: v.$blanco;
             width: 75%;
