@@ -9,8 +9,9 @@ let porcentaje;
 class BotonesNavegacion{
     
     sigPagina(){
-        if(noPagina < 3){
+        if(noPagina < paginas.length - 1){
             noPagina++;
+            selectOpcion(noPagina);
             visualizarPagina();
         }
         else{
@@ -21,6 +22,7 @@ class BotonesNavegacion{
     atrasPaginas(){
         if(noPagina > 0){
             noPagina--;
+            selectOpcion(noPagina);
             visualizarPagina();
         }
         else{
@@ -30,34 +32,10 @@ class BotonesNavegacion{
 
     home(){
         noPagina = 0;
+        selectOpcion(noPagina);
         visualizarPagina();
     }
 }
-
-//Objeto con la información de las páginas--------------------------------
-const paginas = [
-    {
-        nombre: 'Bienvenida',
-        ruta: 'pag01.html', 
-        progreso: 1
-    },
-    {
-        nombre: 'Antecedentes y conceptos PLD y CFT', 
-        ruta: 'pag02.html', 
-        progreso: 2
-    },
-    {
-        nombre: 'Actividad de reforzamiento', 
-        ruta: 'pag03.html', 
-        progreso: 3
-    },
-    {
-        nombre: 'Evaluación final', 
-        ruta: 'pag04.html', 
-        progreso: 4
-    },
-]
-
 
 //Iniciar funciones------------------------------------------------
 jQuery(function($){
@@ -87,8 +65,9 @@ function visualizarPagina(){
     headingTitulo.text(titulo);
 
     //Actualizar el porcentaje del progreso
-    const barraPorcentaje = $('.porcentaje');
-    porcentaje = 25 * paginas[noPagina].progreso;
+    const totalPaginas = paginas.length;
+    const porcentajePorPagina = 100 / totalPaginas;
+    porcentaje = porcentajePorPagina * paginas[noPagina].progreso;
     verificarMenu();
 
     //Cargar página
@@ -103,4 +82,13 @@ function visualizarPagina(){
             drop();
         });
     }
+}
+
+//Cambiar el indicador del menu
+function selectOpcion(noPagina){
+    
+    const select = document.querySelector('.select');
+    select.classList.remove('select');
+
+    enlaces[noPagina].classList.add('select');
 }

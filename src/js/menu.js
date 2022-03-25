@@ -6,11 +6,15 @@ const contenido = document.querySelector('.contenido');
 const mensajePorcentaje = document.querySelector('#progreso__mensaje');
 const barra = document.querySelector('.barra');
 
+//Variables de los enlaces del menu
+const enlaces = document.querySelectorAll('.enlacesPaginas');
+
 let menuAbierto = false;
 
 document.addEventListener('DOMContentLoaded', function(){
 
     btn_menu.addEventListener('click', abirMenu);
+    irPagina();
 });
 
 function abirMenu() {
@@ -44,10 +48,27 @@ function actualizarPorcentaje(){
     mensajePorcentaje.innerHTML = `
         ${porcentaje}% Completado
     `;
+
+    const barraPorcentaje = document.querySelector('.porcentaje');
+    barraPorcentaje.style.width = `${porcentaje}%`;
 }
 
 function verificarMenu(){
     if(menuAbierto){
         actualizarPorcentaje();
     }
+}
+
+function irPagina(){
+    enlaces.forEach(enlace=>{
+        enlace.addEventListener('click', function(e){
+            e.preventDefault();
+            noPagina = parseInt(enlace.dataset.pagina);
+            
+            visualizarPagina();
+
+            //Cambiar el indicador del menu
+            selectOpcion(noPagina);
+        });
+    });
 }

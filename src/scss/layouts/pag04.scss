@@ -1,0 +1,401 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+#intro_actividad04{
+    display: flex;
+    flex-direction: row-reverse;
+    background-image: url('/build/img/contenido/Pag04/fondo.svg');
+    @include m.fondo(center);
+
+    @include m.escritorio{
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    @include  m.tablet{
+        height: 50rem;
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        background: v.$gris;
+        width: 100%;
+        height: 35%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    #vineta04{
+        position: absolute;
+        width: 40rem;
+        padding: 2rem;
+        background: v.$blanco;
+        border-radius: 2rem;
+        border: 5px solid v.$azul;
+        top: 8rem;
+        left: 25rem;
+
+        @include m.escritorioHD{
+            width: 25rem;
+            left: 15rem;
+        }
+
+        @include m.escritorio{
+            position: static;
+            align-self: center;
+            margin-bottom: 3rem;
+            width: 50%;
+        }
+
+        @include m.tablet{
+            width: 70%;
+            font-size: 1.4rem;  
+        }
+       
+        @include m.telefono{
+            width: 90%;
+        }
+
+        #relativo{
+            position: relative;
+            text-align: center;
+
+            #frase01{
+                @include m.resaltar(v.$azul, 700);
+            }
+
+            #frase02{
+                @include m.resaltar(v.$verde, 700);
+            }
+
+            &::after{
+                content: '';
+                position: absolute;
+                background: v.$azul;
+                top: 20%;
+                right: -5rem;
+                width: 3rem;
+                height: 4rem;
+                clip-path: polygon(0 0, 0% 100%, 100% 50%);
+
+                @include m.escritorio{
+                    right: 40%;
+                    top: calc(100% + 2.4rem);
+                    width: 4rem;
+                    height: 3rem;
+                    clip-path: polygon(0 0, 50% 100%, 100% 0);
+                }
+            }
+        }
+    }
+
+    .cont-imagen{
+        margin-right: 15%;
+
+        @include m.escritorio{
+            margin: 0;
+            height: 50%;
+        }
+    }
+}
+
+#fondo-cuadros{
+
+    background-image: url('/build/img/contenido/Pag04/fondo.svg');
+    @include m.fondo(center);
+
+    #cuadros-informativos{
+
+        width: 90%;
+        margin: 0 auto;
+        
+    
+        .cuadros_info{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 4rem;
+            overflow: hidden;
+            color: v.$blanco;
+            padding: 4rem 2rem 4rem 0;
+            font-size: 2rem;
+            box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.75);
+
+            @include m.tablet{
+                display: flex;
+                flex-direction: column;
+                padding: 2rem;
+            }
+
+            @include m.escritorio{
+                font-size: 1.6rem;
+            }
+    
+            &#cuadro01{
+                @include m.cuadrosInfo(v.$verde);
+            }
+    
+            &#cuadro02{
+                @include m.cuadrosInfo(v.$azul);
+            }
+    
+            &#cuadro03{
+                @include m.cuadrosInfo(v.$naranja);
+            }
+    
+            &#cuadro04{
+                @include m.cuadrosInfo(v.$verde);
+            }
+    
+            .cont-imagen{
+                width: 20%;
+                height: 17rem;
+
+                @include m.tablet{
+                    width: 50%;
+                    height: auto;
+                    margin-bottom: 2rem;
+                    height: 20rem;
+                }
+            }
+    
+            .parrafos{
+                width: 70%;
+                text-align: justify;
+                line-height: 1.6;
+
+                @include m.tablet{
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+#cont-pregunta{
+
+    position: relative;
+    display: flex;
+    padding: 8rem;
+    background-image: url('/build/img/contenido/Pag04/fondo.svg');
+    @include m.fondo(center);
+
+    @include m.escritorioHD{
+        padding: 4rem;
+    }
+
+    @include m.escritorio{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #fondo-negro{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 30%;
+        background: v.$gris;
+        z-index: -1;
+    }
+
+    #fondo-azul{
+        position: absolute;
+        top: 30%;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: v.$azul2;
+        z-index: -1;
+    }
+
+    #vineta04_2{
+
+        position: absolute;
+        max-width: 40rem;
+        padding: 2rem;
+        background: v.$blanco;
+        border-radius: 2rem;
+        border: 5px solid v.$azul;
+        top: 8rem;
+        left: 65rem;
+        box-shadow: 1px 3px 4px 4px rgba(0,0,0,0.75);
+
+        
+        @include m.escritorioHD{
+            padding: 1rem;
+            width: 35rem;
+            top: 15rem;
+            left: 50rem;          
+        }
+
+        @include m.escritorio{
+            position: static;
+        }
+
+        #relativo{
+            position: relative;
+            display: flex;
+            flex-direction: row-reverse;
+
+            #info_pregunta{
+                margin-left: 2rem;
+                font-size: 2rem;
+                text-align: center;
+
+                @include m.escritorioHD{
+                    font-size: 1.6rem;
+                }
+
+                p{
+                    margin-bottom: 1rem;
+                }
+
+                #pregunta{
+                    font-size: 2.4rem;
+                    @include m.resaltar(v.$azul, 700);
+
+                    @include m.escritorioHD{
+                        font-size: 1.8rem;
+                    }
+                }
+
+                #clic{
+                    @include m.resaltar(v.$verde, 700);
+                }
+            }
+
+            #clic_enlace{
+                width: 6rem;
+                height: 6rem;
+                align-self: flex-end;
+            }
+
+            &::after{
+                content: '';
+                position: absolute;
+                background: v.$azul;
+                width: 4rem;
+                height: 6rem;
+                clip-path: polygon(100% 0, 0 50%, 100% 100%);
+                top: 5%;
+                left: -6rem;
+
+                @include m.escritorioHD{
+                    left: -4.4rem;
+                    width: 3rem;
+                    height: 4rem;
+                }
+
+                @include m.escritorio{
+                    clip-path: polygon(0 0, 50% 100%, 100% 0);
+                    top: calc(100% + 1.4rem);
+                    left: 40%;
+                    width: 4rem;
+                    height: 3rem;
+                }
+            }
+        }
+    }
+
+    .cont-flecha{
+        background: v.$amarillo;
+        width: 10rem;
+        height: 10rem;
+        transform: rotate(90deg);
+        position: absolute;
+        top: 60%;
+        right: 30rem;
+        clip-path: polygon(0% 20%, 60% 35%, 60% 0, 100% 50%, 60% 99%, 60% 65%, 0 83%);
+
+        @include m.escritorio{
+            display: none;
+        }
+    }
+
+    .cont-imagen{
+        margin-left: 10rem;
+        height: 60rem;
+        z-index: 2;
+
+        @include m.escritorioHD{
+            margin-left: 3rem;
+            width: 35rem;
+        }
+    }
+}
+
+#cont-respuestas{
+
+    background-image: url('/build/img/contenido/Pag04/fondo.svg');
+    @include m.fondo(center);
+
+    .fondo{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .respuestas{
+
+            margin-bottom: 4rem;
+            display: flex;
+            overflow: hidden;
+
+            @include m.tablet{
+                flex-direction: column-reverse;
+
+            }
+
+            .inciso{
+                width: 10%;
+                color: v.$blanco;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 4.2rem;
+                font-weight: 700;
+
+                @include m.tablet{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 2rem;
+                }
+            }
+    
+            .respuesta{
+                width: 90%;
+                background: v.$blanco;
+                padding: 3rem;
+                clip-path: polygon(2% 0, 100% 0, 100% 100%, 0% 100%);
+
+                @include m.tablet{
+                    width: 100%;
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                    margin-bottom: 2rem;
+                }
+
+            }
+
+            &#resp01{
+                @include m.cuadrosRespuesta(v.$naranja);
+            }
+
+            &#resp02{
+                @include m.cuadrosRespuesta(v.$azul);
+            }
+
+            &#resp03{
+                @include m.cuadrosRespuesta(v.$verde);
+            }   
+
+        }       
+    }
+}

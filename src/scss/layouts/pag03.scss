@@ -1,11 +1,7 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
-#intro_actividad{
-    width: 100%;
-    height: 60rem;
-    overflow: hidden;
-    position: relative;
+#intro_actividad03{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,7 +16,7 @@
         height: 55rem;
     }
 
-    #vineta{
+    #vineta03{
         width: 60rem;
         background: v.$blanco;
         padding: 2.4rem;

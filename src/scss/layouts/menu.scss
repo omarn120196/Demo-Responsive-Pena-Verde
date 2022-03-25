@@ -63,10 +63,10 @@
         .porcentaje{
             position: absolute;
             background: v.$blanco;
-            width: 75%;
             height: 100%;
             top: 0;
             left: 0;
+            transition: width .3s ease-in;
         }
     }
 
@@ -94,6 +94,7 @@
 
         &.select{
             color: v.$blanco;
+            transition: all .3s ease;
 
             &::before{
                 content: '';
