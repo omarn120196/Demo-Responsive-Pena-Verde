@@ -1,23 +1,795 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
-.contenedor{
+#bienvenida{
+    width: 100%;
+    height: 4rem;
+    background: v.$blanco;
 
+    #seccion01{
+        width: 100%;
+        height: 60rem;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        background: v.$azul3;
+
+        @include m.telefono{
+            height: 90rem;
+        }
+
+        #vineta_01{
+            width: 70rem;
+            background: v.$blanco;
+            padding: 2.4rem;
+            border-radius: 2rem;
+            border: 5px solid v.$azul;
+            font-size: 2.4rem;
+            text-align: center;
+            position: absolute;
+            top: 3rem;
+            left: 20rem;
+
+            @include m.escritorio{
+                width: 60rem;
+                left: 3rem;
+            }
+
+            @include m.tablet{
+                width: 55rem;
+            }
+
+            @include m.telefono{
+                width: 35rem;
+                left: 4rem;
+            }
     
+            #relativo{
+                position: relative;
+    
+                #frase_01{
+                    @include m.resaltar(v.$azul, 400);
+                }
+        
+                #frase_02{
+                    @include m.resaltar(v.$verde, 700);
+                }
+        
+                &::after{
+                    content: '';
+                    position: absolute;
+                    background: v.$azul;
+                    top: 130%;
+                    right: 25rem;
+                    width: 3rem;
+                    height: 4rem;
+                    clip-path: polygon(50% 59%, 0 0, 100% 0);
 
-    #titulo_01{
-        color: v.$azul2;
-        text-align: center;
+                    @include m.telefono{
+                        top: 115%;
+                        right: 14rem;
+                    }
+                }
+            }
+        }
+    
+        #vineta_02{
+            width: 70rem;
+            background: v.$blanco;
+            padding: 2.4rem;
+            border-radius: 2rem;
+            border: 5px solid v.$azul;
+            font-size: 2.4rem;
+            text-align: center;
+            position: absolute;
+            top: 20rem;
+            left: 35rem;
+
+            @include m.escritorio{
+                width: 60rem;
+                left: 3rem;
+            }
+
+            @include m.tablet{
+                width: 55rem;
+            }
+
+            @include m.telefono{
+                width: 35rem;
+                left: 4rem;
+                top: 30rem;
+            }
+    
+            #relativo{
+                position: relative;
+    
+                #frase_03{
+                    @include m.resaltar(v.$azul, 400);
+                }
+            
+                &::after{
+                    content: '';
+                    position: absolute;
+                    background: v.$azul;
+                    top: 130%;
+                    right: 25rem;
+                    width: 3rem;
+                    height: 4rem;
+                    clip-path: polygon(50% 59%, 0 0, 100% 0);
+
+                    @include m.escritorio{
+                        top: 126%;
+                    }
+                    @include m.telefono{
+                        right: 14rem;
+                        top: 115%;
+                    }
+                }
+            }
+        }
+    
+        .cont-imagen{
+            width: 20%;
+            height: 40%;
+            top: 36rem;
+            left: 50rem;
+            position: absolute;
+
+            @include m.escritorio{
+                height: 30%;
+                top: 42rem;
+                left: 30rem;
+            }
+
+            @include m.telefono{
+                width: 45%;
+                height: 37%;
+                top: 58rem;
+                left: 15rem;
+            }
+        }
     }
 
-    #parrafo_01{
-        font-size: 2rem;
-        color: v.$naranja;
-        text-align: justify;
-        margin-bottom: 2rem;
+    #seccion02{
+        width: 100%;
+        height: 150rem;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        background: v.$verde;
+
+        @include m.telefono{
+            height: 180rem;
+        }
+
+        #contenedor_pop01{
+            width: 40rem;
+            background-color: v.$azul;
+            border: 5px solid v.$blanco;
+            position: absolute;
+            top: 15rem;
+            left: 4rem;
+            text-align: left;
+            font-size: 2rem;
+            border-radius: 2rem;
+            box-shadow: .3rem .3rem .3rem .3rem ;
+
+            @include m.escritorio{
+                top: 5rem;
+            }
+
+            @include m.telefono{
+                width: 35rem;
+                left: 4rem;
+                top: 14rem;
+            }
+
+            #pop01{
+                margin-top: 1rem;
+                margin-left: 7rem;
+                margin-bottom: 1rem;
+                margin-right: 1rem;
+                border-radius: 2rem;
+                background: v.$blanco;
+                padding: 2rem 2rem 2rem 2rem;
+
+                #relativo{
+                    position: relative;
+        
+                    #texto01{
+                        @include m.resaltar(v.$azul, 400);
+                    }
+                }
+            }
+        }
+
+        #circulo01{
+            width: 15rem;
+            height: 15rem;
+            top: 5rem;
+            left: 48rem;
+            text-align: center;
+            font-size: 4rem;
+            padding-top: 5rem;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: .2rem .2rem .2rem .2rem;
+            background: v.$azul;
+
+            @include m.tablet{
+                left: 46rem;
+            }
+
+            @include m.telefono{
+                top: 2rem;
+                width: 10rem;
+                height: 10rem;
+                left: 17rem;
+                font-size: 2rem;
+                padding-top: 4rem;
+            }
+
+            #relativo{
+                position: relative;
+                #c_texto01{
+                    @include m.resaltar(v.$blanco, 700);
+                }
+            }
+        }
+
+        #contenedor_pop02{
+            width: 40rem;
+            background-color: v.$rojo;
+            border: 5px solid v.$blanco;
+            position: absolute;
+            top: 30rem;
+            left: 70rem;
+            text-align: right;
+            font-size: 2rem;
+            border-radius: 2rem;
+            box-shadow: .3rem .3rem .3rem .3rem ;
+
+            @include m.escritorio{
+                left: 4rem;
+            }
+
+            @include m.telefono{
+                top: 44rem;
+                width: 35rem;
+                left: 4rem;
+            }
+
+            #pop02{
+                margin-top: 1rem;
+                margin-left: 7rem;
+                margin-bottom: 1rem;
+                margin-right: 1rem;
+                border-radius: 2rem;
+                background: v.$blanco;
+                padding: 2rem 2rem 2rem 2rem;
+
+                #relativo{
+                    position: relative;
+        
+                    #texto02{
+                        @include m.resaltar(v.$azul, 400);
+                    }
+                }
+            }
+        }
+        #circulo02{
+            width: 15rem;
+            height: 15rem;
+            top: 30rem;
+            left: 48rem;
+            text-align: center;
+            font-size: 4rem;
+            padding-top: 4rem;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: .2rem .2rem .2rem .2rem;
+            background: v.$rojo;
+
+            @include m.tablet{
+                left: 46rem;
+            }
+
+            @include m.telefono{
+                top: 32rem;
+                width: 10rem;
+                height: 10rem;
+                left: 17rem;
+                font-size: 2rem;
+                padding-top: 3rem;
+            }
+
+            #relativo{
+                position: relative;
+                #c_texto02{
+                    @include m.resaltar(v.$blanco, 700);
+                }
+            }
+
+        }
+
+        #contenedor_pop03{
+            width: 40rem;
+            background-color: v.$verde;
+            border: 5px solid v.$blanco;
+            position: absolute;
+            top: 55rem;
+            left: 4rem;
+            text-align: left;
+            font-size: 2rem;
+            border-radius: 2rem;
+            box-shadow: .3rem .3rem .3rem .3rem ;
+
+            @include m.telefono{
+                width: 35rem;
+                left: 4rem;
+                top: 74rem;
+            }
+
+            #pop03{
+                margin-top: 1rem;
+                margin-left: 7rem;
+                margin-bottom: 1rem;
+                margin-right: 1rem;
+                border-radius: 2rem;
+                background: v.$blanco;
+                padding: 2rem 2rem 2rem 2rem;
+
+                #relativo{
+                    position: relative;
+        
+                    #texto03{
+                        @include m.resaltar(v.$azul, 400);
+                    }
+                }
+            }
+        }
+        #circulo03{
+            width: 15rem;
+            height: 15rem;
+            top: 55rem;
+            left: 48rem;
+            text-align: center;
+            font-size: 4rem;
+            padding-top: 4rem;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: .2rem .2rem .2rem .2rem;
+            background: v.$verde;
+
+            @include m.tablet{
+                left: 46rem;
+            }
+
+            @include m.telefono{
+                top: 62rem;
+                width: 10rem;
+                height: 10rem;
+                left: 17rem;
+                font-size: 2rem;
+                padding-top: 4rem;
+            }
+
+            #relativo{
+                position: relative;
+                #c_texto03{
+                    @include m.resaltar(v.$blanco, 700);
+                }
+            }
+
+        }
+
+        #contenedor_pop04{
+            width: 40rem;
+            background-color: v.$azul;
+            border: 5px solid v.$blanco;
+            position: absolute;
+            top: 80rem;
+            left: 70rem;
+            text-align: right;
+            font-size: 2rem;
+            border-radius: 2rem;
+            box-shadow: .3rem .3rem .3rem .3rem ;
+
+            @include m.escritorio{
+                left: 4rem;
+            }
+
+            @include m.telefono{
+                top: 104rem;
+                width: 35rem;
+                left: 4rem;
+            }
+
+            #pop04{
+                margin-top: 1rem;
+                margin-left: 7rem;
+                margin-bottom: 1rem;
+                margin-right: 1rem;
+                border-radius: 2rem;
+                background: v.$blanco;
+                padding: 2rem 2rem 2rem 2rem;
+
+                #relativo{
+                    position: relative;
+        
+                    #texto04{
+                        @include m.resaltar(v.$azul, 400);
+                    }
+                }
+            }
+        }
+        #circulo04{
+            width: 15rem;
+            height: 15rem;
+            top: 80rem;
+            left: 48rem;
+            text-align: center;
+            font-size: 4rem;
+            padding-top: 4rem;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: .2rem .2rem .2rem .2rem;
+            background: v.$azul;
+
+            @include m.tablet{
+                left: 46rem;
+            }
+
+            @include m.telefono{
+                top: 92rem;
+                width: 10rem;
+                height: 10rem;
+                left: 17rem;
+                font-size: 2rem;
+                padding-top: 3rem;
+            }
+
+            #relativo{
+                position: relative;
+                #c_texto04{
+                    @include m.resaltar(v.$blanco, 700);
+                }
+            }
+
+        }
+
+        #contenedor_pop05{
+            width: 40rem;
+            background-color: v.$rojo;
+            border: 5px solid v.$blanco;
+            position: absolute;
+            top: 115rem;
+            left: 4rem;
+            text-align: left;
+            font-size: 2rem;
+            border-radius: 2rem;
+            box-shadow: .3rem .3rem .3rem .3rem ;
+
+            @include m.telefono{
+                top: 150rem;
+                width: 35rem;
+                left: 4rem;
+            }
+
+            #pop05{
+                margin-top: 1rem;
+                margin-left: 7rem;
+                margin-bottom: 1rem;
+                margin-right: 1rem;
+                border-radius: 2rem;
+                background: v.$blanco;
+                padding: 2rem 2rem 2rem 2rem;
+
+                #relativo{
+                    position: relative;
+        
+                    #texto05{
+                        @include m.resaltar(v.$azul, 400);
+                    }
+                }
+            }
+        }
+        #circulo05{
+            width: 15rem;
+            height: 15rem;
+            top: 115rem;
+            left: 48rem;
+            text-align: center;
+            font-size: 4rem;
+            padding-top: 4rem;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: .2rem .2rem .2rem .2rem;
+            background: v.$rojo;
+
+            @include m.tablet{
+                left: 46rem;
+            }
+
+            @include m.telefono{
+                top: 138rem;
+                width: 10rem;
+                height: 10rem;
+                left: 17rem;
+                font-size: 2rem;
+                padding-top: 4rem;
+            }
+
+            #relativo{
+                position: relative;
+                #c_texto05{
+                    @include m.resaltar(v.$blanco, 700);
+                }
+            }
+
+        }
     }
 
-    .cont_img01{
-        width: 30rem;
+    #seccion03{
+        width: 100%;
+        height: 15rem;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        background: v.$gris;
+
+        @include m.escritorio{
+            height: 20rem;
+        }
+
+        @include m.telefono{
+            height: 30rem;
+        }
+
+        #c_texto{
+            width: 70rem;
+            height: 10rem;
+            left: 5rem;
+            font-size: 2.5rem;
+            padding: 2rem 2rem 2rem 2rem;
+            text-align: center;
+            border-radius: 1rem;
+            position: absolute;
+            box-shadow: .2rem .2rem .2rem .2rem;
+            background: v.$verde;
+
+            @include m.escritorio{
+                width: 55rem;
+                top: 5rem;
+            }
+
+            @include m.telefono{
+                height: 20rem;
+                width: 32rem;
+            }
+
+            #relativo{
+                position: relative;
+                #texto{
+                    @include m.resaltar(v.$blanco, 700);
+                }
+            }
+        }
     }
+
+    #seccion04{
+        width: 100%;
+        height: 90rem;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        background: v.$blanco;
+
+        @include m.escritorio{
+            height: 100rem;
+        }
+
+        @include m.telefono{
+            height: 130rem;
+        }
+
+        #cont-imagen2{
+            width: 100rem;
+            height: 30rem;
+            background: v.$verde;
+            top: 5rem;
+            left: 8rem;
+            border-radius: 2rem 2rem 0 0; 
+            border: 2px solid v.$azul;
+            position: absolute;
+
+            @include m.escritorio{
+                left: 2.5rem;
+                height: 25rem;
+                width: 60rem;
+            }
+
+            @include m.tablet{
+                left: .8rem;
+            }
+
+            @include m.telefono{
+                width: 40rem;
+            }
+
+            .detective2{
+                width: 30%;
+                height: 90%;
+                margin-top: 3rem;
+
+                @include m.escritorio{
+                    margin-top: 2.5rem;
+                }
+
+                @include m.telefono{
+                    width: 45%;
+                }
+            }
+        }
+
+        #cuadro_texto{
+            width: 100rem;
+            height: 50rem;
+            background: v.$blanco;
+            border-radius: 0 0 2rem 2rem;
+            border: 2px solid v.$azul;
+            text-align: left;
+            position: absolute;
+            top: 35rem;
+            left: 8rem;
+            padding: 4rem;
+
+            @include m.escritorio{
+                top: 30rem;
+                left: 2.5rem;
+                width: 60rem;
+                height: 60rem;
+            }
+
+            @include m.tablet{
+                left: .8rem;
+            }
+
+            @include m.telefono{
+                width: 40rem;
+                height: 95rem;
+            }
+
+            #relativo{
+                position: relative;
+
+                #titulo{
+                    font-size: 2.6rem;
+                    text-align: center;
+                    padding-bottom: 5rem;
+                    @include m.resaltar(v.$azul, 700);
+                }
+
+                #lista{
+                    font-size: 2.1rem;
+                    margin-left: 5rem;
+                    @include m.resaltar(v.$azul, 300);
+                }
+            }
+        }
+    }
+
+    #seccion05{
+        width: 100%;
+        height: 15rem;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        background: v.$gris;
+
+        @include m.escritorio{
+            height: 20rem;
+        }
+
+        @include m.telefono{
+            height: 20rem;
+        }
+
+        #c_texto{
+            width: 70rem;
+            height: 10rem;
+            left: 20rem;
+            font-size: 2.7rem;
+            padding: 2rem 2rem 2rem 2rem;
+            text-align: center;
+            position: absolute;
+            background: v.$gris;
+
+            @include m.escritorio{
+                left: 1rem;
+            }
+
+            @include m.tablet{
+                left: .1rem;
+            }
+
+            @include m.telefono{
+                height: 20rem;
+                width: 32rem;
+                top: 3rem;
+                left: 5rem;
+            }
+
+            #relativo{
+                position: relative;
+                #texto{
+                    @include m.resaltar(v.$blanco, 700);
+                }
+            }
+        }
+    }
+
+    #seccion6{
+        width: 100%;
+        height: 40rem;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        background: v.$azul3;
+
+        #cont-dialogo{
+            width: 40rem;
+            height: 20rem;
+            background-color: v.$rojo;
+            position: absolute;
+            top: 10rem;
+            left: 40rem;
+            text-align: left;
+            font-size: 2rem;
+
+            @include m.telefono{
+                width: 35rem;
+                left: 4rem;
+                top: 14rem;
+            }
+
+            #dialogo{
+                height: 18rem;
+                margin-top: 1rem;
+                margin-left: 1rem;
+                margin-bottom: 1rem;
+                margin-right: 1rem;
+                border-radius: 2rem;
+                background: v.$azul;
+                padding: 2rem 2rem 2rem 2rem;
+
+                #relativo{
+                    position: relative;
+        
+                    #texto{
+                        @include m.resaltar(v.$azul, 400);
+                    }
+                }
+            }
+        }
+    }
+
 }
