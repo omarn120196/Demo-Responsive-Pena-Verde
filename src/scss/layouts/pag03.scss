@@ -2,98 +2,45 @@
 @use '../base/mixins' as m;
 
 #intro_actividad03{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row-reverse;
 
-    background-image: linear-gradient(to top, #129a64e3 0%, #129a64e3 100%), url('/build/img/contenido/Pag03/fondo.svg');
-    @include m.fondo(center);
+    @include m.grid(2, 1rem);
+    position: relative;
+    @include m.fondoCirculos;
 
     @include m.tablet{
-        flex-direction: column;
-        background: v.$gris2;
-        height: 55rem;
+        @include m.grid(1, 1rem);
     }
 
-    #vineta03{
-        width: 60rem;
-        background: v.$blanco;
-        padding: 2.4rem;
-        border-radius: 2rem;
-        border: 5px solid v.$azul;
-        font-size: 2.4rem;
-        text-align: center;
+    &::after{
+        content: '';
         position: absolute;
-        top: 6rem;
-        left: 20rem;
+        width: 100%;
+        height: 100%;
+        background: v.$verde;
+        z-index: -1;
+    }
 
-        @include m.escritorioHD{
-            width: 50rem;
-            left: 6rem;
-        }
+    .cont-vineta{
 
-        @include m.escritorio{
-            left: 3rem;
-            width: 30rem;
-            font-size: 1.8rem;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
 
-        @include m.tablet{
-            margin-top: 5rem;
-            position: static;
-        }
-
-        #relativo{
-            position: relative;
+        #vineta03{
+            @include m.vineta(v.$blanco, v.$azul, 90%, 6rem, derecha);
 
             #frase_01{
                 @include m.resaltar(v.$azul, 700);
             }
-    
+
             #frase_02{
                 @include m.resaltar(v.$verde, 700);
-            }
-    
-            &::after{
-                content: '';
-                position: absolute;
-                background: v.$azul;
-                top: 50%;
-                right: -5.6rem;
-                width: 3rem;
-                height: 4rem;
-                clip-path: polygon(0 0, 0% 100%, 100% 50%);
-
-                @include m.tablet{
-                    top: 120%;
-                    left: 45%;
-                    clip-path: polygon(0 0, 50% 100%, 100% 0);
-                    width: 4rem;
-                    height: 3rem;
-                }
             }
         }
     }
 
     .cont-imagen{
-        width: 40%;
-        height: 100%;
-        padding: 2rem 2rem 0 2rem;
-        background: v.$gris2;
-
-        @include m.escritorioHD{
-            width: 50%;
-        }
-
-        @include m.escritorio{
-            width: 75%;
-        }
-
-        @include m.tablet{
-            width: 100%;
-            height: 50%;
-        }
+        min-height: 100%;
     }
 }
 

@@ -47,6 +47,11 @@
     background-size: cover;
 }
 
+@mixin fondoCirculos {
+    background-image: url('/build/img/contenido/Pag04/fondo.svg');
+    @include fondo(center);
+}
+
 @mixin cuadrosInfo($color) {
     
     background: lighten($color,  4);
@@ -54,6 +59,8 @@
     border-radius: 2rem;
     position: relative;
     z-index: 5;
+    box-shadow: 3px 3px 6px -1px rgba(0,0,0,0.75);
+    overflow: hidden;
     
 
     .fondo_oscuro{
@@ -73,4 +80,45 @@
     border-radius: 2rem;
     border: 5px solid darken($color,  4);
     color: $color;
+}
+
+@mixin vineta ($fondo, $borde, $width, $margin, $direccion) {
+
+    margin-top: $margin;
+    border: 5px solid $borde;
+    background: $fondo;
+    width: $width;
+    padding: 2rem;
+    border-radius: 2rem;
+    line-height: 1.6;
+    position: relative;
+
+    @include tablet(){
+        margin-top: 1rem;
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 20%;
+        left: calc(100% + .4rem);
+        width: 3rem;
+        height: 4rem;
+        background: $borde;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+
+        @if ($direccion == izquierda){
+            clip-path: polygon(100% 0, 0 50%, 100% 100%);
+            left: -3.2rem;
+        }
+
+        @include tablet{
+            top: calc(100% + .4rem);
+            left: 40%;
+            width: 4rem;
+            height: 3rem;
+            clip-path: polygon(0 0, 100% 0%, 50% 100%);
+        }
+
+    }
 }
