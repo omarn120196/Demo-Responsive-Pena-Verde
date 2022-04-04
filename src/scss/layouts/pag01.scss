@@ -1,795 +1,448 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
-#bienvenida{
-    width: 100%;
-    height: 4rem;
-    background: v.$blanco;
+#seccion1{
+    @include m.grid(2, 1rem);
+    position: relative;
 
-    #seccion01{
+    @include m.tablet{
+        @include m.grid(1, 1rem);
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
         width: 100%;
-        height: 60rem;
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row-reverse;
+        height: 100%;
         background: v.$azul3;
+        z-index: -1;
+    }
 
-        @include m.telefono{
-            height: 90rem;
-        }
+    .cont-vineta{
+        display: inline-block;
+        justify-content: center;
+        align-items: flex-start;
+        #vineta01{
+            left: 2rem;
+            @include m.vineta(v.$blanco, v.$azul, 90%, 6rem, derecha);
 
-        #vineta_01{
-            width: 70rem;
-            background: v.$blanco;
-            padding: 2.4rem;
-            border-radius: 2rem;
-            border: 5px solid v.$azul;
-            font-size: 2.4rem;
-            text-align: center;
-            position: absolute;
-            top: 3rem;
-            left: 20rem;
-
-            @include m.escritorio{
-                width: 60rem;
-                left: 3rem;
+            #frase_01{
+                @include m.resaltar(v.$azul, 500);
             }
 
-            @include m.tablet{
-                width: 55rem;
-            }
-
-            @include m.telefono{
-                width: 35rem;
-                left: 4rem;
-            }
-    
-            #relativo{
-                position: relative;
-    
-                #frase_01{
-                    @include m.resaltar(v.$azul, 400);
-                }
-        
-                #frase_02{
-                    @include m.resaltar(v.$verde, 700);
-                }
-        
-                &::after{
-                    content: '';
-                    position: absolute;
-                    background: v.$azul;
-                    top: 130%;
-                    right: 25rem;
-                    width: 3rem;
-                    height: 4rem;
-                    clip-path: polygon(50% 59%, 0 0, 100% 0);
-
-                    @include m.telefono{
-                        top: 115%;
-                        right: 14rem;
-                    }
-                }
+            #frase_02{
+                @include m.resaltar(v.$verde, 700);
             }
         }
-    
-        #vineta_02{
-            width: 70rem;
-            background: v.$blanco;
-            padding: 2.4rem;
-            border-radius: 2rem;
-            border: 5px solid v.$azul;
-            font-size: 2.4rem;
-            text-align: center;
-            position: absolute;
-            top: 20rem;
-            left: 35rem;
 
-            @include m.escritorio{
-                width: 60rem;
-                left: 3rem;
-            }
+        #vineta02{
+            left: 2rem;
+            @include m.vineta(v.$blanco, v.$azul, 90%, 2rem, derecha);
 
-            @include m.tablet{
-                width: 55rem;
-            }
-
-            @include m.telefono{
-                width: 35rem;
-                left: 4rem;
-                top: 30rem;
-            }
-    
-            #relativo{
-                position: relative;
-    
-                #frase_03{
-                    @include m.resaltar(v.$azul, 400);
-                }
-            
-                &::after{
-                    content: '';
-                    position: absolute;
-                    background: v.$azul;
-                    top: 130%;
-                    right: 25rem;
-                    width: 3rem;
-                    height: 4rem;
-                    clip-path: polygon(50% 59%, 0 0, 100% 0);
-
-                    @include m.escritorio{
-                        top: 126%;
-                    }
-                    @include m.telefono{
-                        right: 14rem;
-                        top: 115%;
-                    }
-                }
-            }
-        }
-    
-        .cont-imagen{
-            width: 20%;
-            height: 40%;
-            top: 36rem;
-            left: 50rem;
-            position: absolute;
-
-            @include m.escritorio{
-                height: 30%;
-                top: 42rem;
-                left: 30rem;
-            }
-
-            @include m.telefono{
-                width: 45%;
-                height: 37%;
-                top: 58rem;
-                left: 15rem;
+            #frase_01{
+                @include m.resaltar(v.$azul, 500);
             }
         }
     }
 
-    #seccion02{
-        width: 100%;
-        height: 150rem;
-        overflow: hidden;
+    .cont-imagen{
+        max-height: 100%;
+    }
+}
+
+#seccion2{
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: inline-block;
+    justify-content: space-between;
+    background: v.$verde;
+    
+    @include m.tablet{
+        @include m.grid(1, 1rem);
+    }
+
+    #linea{
+        left: 55rem;
+        width: 2rem;
+        height: 100%;
+        position: absolute;
+        background-color: v.$amarillo;
+        
+        @include m.escritorioHD{
+            left: 77rem;
+        }
+        @include m.tablet{
+            left: 55rem;
+        }
+    }
+
+    #cont_pop1{
+        @include m.cont_pop(v.$azul, 5rem, 5rem, 5rem, left);
+        #pop1{
+            @include m.pop;
+            #texto01{
+                @include m.resaltar(v.$azul, 400);
+            }
+        }
+
+        .icon1{
+            @include m.icon(15%, 55%);
+
+            @include m.telefono{
+                @include m.icon(20%, 50%);
+            }
+        }
+    }
+
+    #circulo01{
+        @include m.circulo(v.$azul, 5rem, 5rem);
+
+        @include m.telefono{
+            top: 2rem;
+            padding-top: 4rem;
+        }
+        
+        #fecha01{
+            @include m.resaltar(v.$blanco, 600);
+        }
+    }
+
+    #cont_pop2{
+        @include m.cont_pop(v.$rojo, 5rem, 70rem, 5rem, right);
+
+        #pop2{
+            @include m.pop;
+
+            #texto02{
+                @include m.resaltar(v.$rojo, 400);
+            }
+        }
+        .icon2{
+            @include m.icon(15%, 50%);
+            @include m.telefono{
+                @include m.icon(20%, 42%);
+            }
+        }
+    }
+
+    #circulo02{
+        @include m.circulo(v.$rojo, 26rem, 3rem);
+
+        @include m.tablet{
+            top: 33rem;
+        }
+        @include m.telefono{
+            top: 43rem;
+            padding-top: 3rem;
+        }
+        #fecha02{
+            @include m.resaltar(v.$blanco, 600);
+        }
+    }
+
+    #cont_pop3{
+        @include m.cont_pop(v.$verde, 5rem, 5rem, 5rem, left);
+
+        #pop3{
+            @include m.pop;
+
+            #texto03{
+                @include m.resaltar(v.$verde, 400);
+            }
+        }
+        .icon3{
+            @include m.icon(15%, 55%);
+            @include m.telefono{
+                @include m.icon(20%, 50%);
+            }
+        }
+    }
+
+    #circulo03{
+        @include m.circulo(v.$verde, 46rem, 5rem);
+
+        @include m.tablet{
+            top: 57rem;
+        }
+        @include m.telefono{
+            top: 81rem;
+            padding-top: 3rem;
+        }
+        #fecha03{
+            @include m.resaltar(v.$blanco, 600);
+        }
+    }
+
+    #cont_pop4{
+        @include m.cont_pop(v.$azul, 5rem, 70rem, 5rem, right);
+        #pop4{
+            @include m.pop;
+            #texto04{
+                @include m.resaltar(v.$azul, 400);
+            }
+        }
+        .icon4{
+            @include m.icon(15%, 30%);
+            @include m.telefono{
+                @include m.icon(15%, 20%);
+            }
+        }
+    }
+
+    #circulo04{
+        @include m.circulo(v.$azul, 68rem, 4rem);
+
+        @include m.tablet{
+            top: 85rem;
+        }
+        @include m.telefono{
+            top: 121rem;
+            padding-top: 3rem;
+        }
+        #fecha04{
+            @include m.resaltar(v.$blanco, 600);
+        }
+    }
+
+    #cont_pop5{
+        @include m.cont_pop(v.$rojo, 5rem, 5rem, 5rem, left);
+        #pop5{
+            @include m.pop;
+            #texto05{
+                @include m.resaltar(v.$rojo, 400);
+            }
+        }
+        .icon5{
+            @include m.icon(15%, 45%);
+            @include m.telefono{
+                @include m.icon(15%, 30%);
+            }
+        }
+    }
+
+    #circulo05{
+        @include m.circulo(v.$rojo, 100rem, 4rem);
+
+        @include m.tablet{
+            top: 123rem;
+        }
+        @include m.telefono{
+            top: 181rem;
+            padding-top: 3rem;
+        }
+        #fecha05{
+            @include m.resaltar(v.$blanco, 600);
+        }
+    }
+}
+
+#seccion3{
+    width: 100%;
+    height: 15rem;
+    position: relative;
+    background-color: v.$gris;
+    display: inline-block;
+    @include m.fondoCirculos;
+
+    @include m.telefono{
+        height: 20rem;
+    }
+
+    #cuadroverde{
+        width: 70rem;
+        height: 10rem;
+        left: 5rem;
+        top: 2rem;
+        bottom: 2rem;
+        font-size: 2.5rem;
+        padding: 2rem 2rem 2rem 2rem;
+        text-align: center;
+        border-radius: 1rem;
         position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row-reverse;
+        box-shadow: .2rem .2rem .2rem .2rem;
         background: v.$verde;
 
+        @include m.tablet{
+            width: 50rem;
+        }
+
         @include m.telefono{
-            height: 180rem;
-        }
-
-        #contenedor_pop01{
-            width: 40rem;
-            background-color: v.$azul;
-            border: 5px solid v.$blanco;
-            position: absolute;
-            top: 15rem;
-            left: 4rem;
-            text-align: left;
-            font-size: 2rem;
-            border-radius: 2rem;
-            box-shadow: .3rem .3rem .3rem .3rem ;
-
-            @include m.escritorio{
-                top: 5rem;
-            }
-
-            @include m.telefono{
-                width: 35rem;
-                left: 4rem;
-                top: 14rem;
-            }
-
-            #pop01{
-                margin-top: 1rem;
-                margin-left: 7rem;
-                margin-bottom: 1rem;
-                margin-right: 1rem;
-                border-radius: 2rem;
-                background: v.$blanco;
-                padding: 2rem 2rem 2rem 2rem;
-
-                #relativo{
-                    position: relative;
-        
-                    #texto01{
-                        @include m.resaltar(v.$azul, 400);
-                    }
-                }
-            }
-        }
-
-        #circulo01{
-            width: 15rem;
+            width: 30rem;
             height: 15rem;
-            top: 5rem;
-            left: 48rem;
-            text-align: center;
-            font-size: 4rem;
-            padding-top: 5rem;
-            border-radius: 50%;
-            position: absolute;
-            box-shadow: .2rem .2rem .2rem .2rem;
-            background: v.$azul;
+            left: 1.2rem;        }
 
-            @include m.tablet{
-                left: 46rem;
-            }
-
-            @include m.telefono{
-                top: 2rem;
-                width: 10rem;
-                height: 10rem;
-                left: 17rem;
-                font-size: 2rem;
-                padding-top: 4rem;
-            }
-
-            #relativo{
-                position: relative;
-                #c_texto01{
-                    @include m.resaltar(v.$blanco, 700);
-                }
-            }
-        }
-
-        #contenedor_pop02{
-            width: 40rem;
-            background-color: v.$rojo;
-            border: 5px solid v.$blanco;
-            position: absolute;
-            top: 30rem;
-            left: 70rem;
-            text-align: right;
-            font-size: 2rem;
-            border-radius: 2rem;
-            box-shadow: .3rem .3rem .3rem .3rem ;
-
-            @include m.escritorio{
-                left: 4rem;
-            }
-
-            @include m.telefono{
-                top: 44rem;
-                width: 35rem;
-                left: 4rem;
-            }
-
-            #pop02{
-                margin-top: 1rem;
-                margin-left: 7rem;
-                margin-bottom: 1rem;
-                margin-right: 1rem;
-                border-radius: 2rem;
-                background: v.$blanco;
-                padding: 2rem 2rem 2rem 2rem;
-
-                #relativo{
-                    position: relative;
-        
-                    #texto02{
-                        @include m.resaltar(v.$azul, 400);
-                    }
-                }
-            }
-        }
-        #circulo02{
-            width: 15rem;
-            height: 15rem;
-            top: 30rem;
-            left: 48rem;
-            text-align: center;
-            font-size: 4rem;
-            padding-top: 4rem;
-            border-radius: 50%;
-            position: absolute;
-            box-shadow: .2rem .2rem .2rem .2rem;
-            background: v.$rojo;
-
-            @include m.tablet{
-                left: 46rem;
-            }
-
-            @include m.telefono{
-                top: 32rem;
-                width: 10rem;
-                height: 10rem;
-                left: 17rem;
-                font-size: 2rem;
-                padding-top: 3rem;
-            }
-
-            #relativo{
-                position: relative;
-                #c_texto02{
-                    @include m.resaltar(v.$blanco, 700);
-                }
-            }
-
-        }
-
-        #contenedor_pop03{
-            width: 40rem;
-            background-color: v.$verde;
-            border: 5px solid v.$blanco;
-            position: absolute;
-            top: 55rem;
-            left: 4rem;
-            text-align: left;
-            font-size: 2rem;
-            border-radius: 2rem;
-            box-shadow: .3rem .3rem .3rem .3rem ;
-
-            @include m.telefono{
-                width: 35rem;
-                left: 4rem;
-                top: 74rem;
-            }
-
-            #pop03{
-                margin-top: 1rem;
-                margin-left: 7rem;
-                margin-bottom: 1rem;
-                margin-right: 1rem;
-                border-radius: 2rem;
-                background: v.$blanco;
-                padding: 2rem 2rem 2rem 2rem;
-
-                #relativo{
-                    position: relative;
-        
-                    #texto03{
-                        @include m.resaltar(v.$azul, 400);
-                    }
-                }
-            }
-        }
-        #circulo03{
-            width: 15rem;
-            height: 15rem;
-            top: 55rem;
-            left: 48rem;
-            text-align: center;
-            font-size: 4rem;
-            padding-top: 4rem;
-            border-radius: 50%;
-            position: absolute;
-            box-shadow: .2rem .2rem .2rem .2rem;
-            background: v.$verde;
-
-            @include m.tablet{
-                left: 46rem;
-            }
-
-            @include m.telefono{
-                top: 62rem;
-                width: 10rem;
-                height: 10rem;
-                left: 17rem;
-                font-size: 2rem;
-                padding-top: 4rem;
-            }
-
-            #relativo{
-                position: relative;
-                #c_texto03{
-                    @include m.resaltar(v.$blanco, 700);
-                }
-            }
-
-        }
-
-        #contenedor_pop04{
-            width: 40rem;
-            background-color: v.$azul;
-            border: 5px solid v.$blanco;
-            position: absolute;
-            top: 80rem;
-            left: 70rem;
-            text-align: right;
-            font-size: 2rem;
-            border-radius: 2rem;
-            box-shadow: .3rem .3rem .3rem .3rem ;
-
-            @include m.escritorio{
-                left: 4rem;
-            }
-
-            @include m.telefono{
-                top: 104rem;
-                width: 35rem;
-                left: 4rem;
-            }
-
-            #pop04{
-                margin-top: 1rem;
-                margin-left: 7rem;
-                margin-bottom: 1rem;
-                margin-right: 1rem;
-                border-radius: 2rem;
-                background: v.$blanco;
-                padding: 2rem 2rem 2rem 2rem;
-
-                #relativo{
-                    position: relative;
-        
-                    #texto04{
-                        @include m.resaltar(v.$azul, 400);
-                    }
-                }
-            }
-        }
-        #circulo04{
-            width: 15rem;
-            height: 15rem;
-            top: 80rem;
-            left: 48rem;
-            text-align: center;
-            font-size: 4rem;
-            padding-top: 4rem;
-            border-radius: 50%;
-            position: absolute;
-            box-shadow: .2rem .2rem .2rem .2rem;
-            background: v.$azul;
-
-            @include m.tablet{
-                left: 46rem;
-            }
-
-            @include m.telefono{
-                top: 92rem;
-                width: 10rem;
-                height: 10rem;
-                left: 17rem;
-                font-size: 2rem;
-                padding-top: 3rem;
-            }
-
-            #relativo{
-                position: relative;
-                #c_texto04{
-                    @include m.resaltar(v.$blanco, 700);
-                }
-            }
-
-        }
-
-        #contenedor_pop05{
-            width: 40rem;
-            background-color: v.$rojo;
-            border: 5px solid v.$blanco;
-            position: absolute;
-            top: 115rem;
-            left: 4rem;
-            text-align: left;
-            font-size: 2rem;
-            border-radius: 2rem;
-            box-shadow: .3rem .3rem .3rem .3rem ;
-
-            @include m.telefono{
-                top: 150rem;
-                width: 35rem;
-                left: 4rem;
-            }
-
-            #pop05{
-                margin-top: 1rem;
-                margin-left: 7rem;
-                margin-bottom: 1rem;
-                margin-right: 1rem;
-                border-radius: 2rem;
-                background: v.$blanco;
-                padding: 2rem 2rem 2rem 2rem;
-
-                #relativo{
-                    position: relative;
-        
-                    #texto05{
-                        @include m.resaltar(v.$azul, 400);
-                    }
-                }
-            }
-        }
-        #circulo05{
-            width: 15rem;
-            height: 15rem;
-            top: 115rem;
-            left: 48rem;
-            text-align: center;
-            font-size: 4rem;
-            padding-top: 4rem;
-            border-radius: 50%;
-            position: absolute;
-            box-shadow: .2rem .2rem .2rem .2rem;
-            background: v.$rojo;
-
-            @include m.tablet{
-                left: 46rem;
-            }
-
-            @include m.telefono{
-                top: 138rem;
-                width: 10rem;
-                height: 10rem;
-                left: 17rem;
-                font-size: 2rem;
-                padding-top: 4rem;
-            }
-
-            #relativo{
-                position: relative;
-                #c_texto05{
-                    @include m.resaltar(v.$blanco, 700);
-                }
-            }
-
+        #texto{
+            @include m.resaltar(v.$blanco, 700);
         }
     }
+}
 
-    #seccion03{
-        width: 100%;
-        height: 15rem;
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row-reverse;
-        background: v.$gris;
+#seccion4{
+    width: 100%;
+    height: auto;
+    @include m.fondoCirculos;
 
-        @include m.escritorio{
-            height: 20rem;
-        }
+    #cont-verde{
+        margin-top: 5rem;
+        margin-left: 12rem;
+        width: 80%;
+        height: 50%;
+        background: v.$verde;
+        border: 5px solid v.$blanco;
+        box-shadow: 10px 11px 5px -4px rgba(0,0,0,0.45);
+        border-radius: 2rem;
 
-        @include m.telefono{
-            height: 30rem;
-        }
-
-        #c_texto{
-            width: 70rem;
-            height: 10rem;
-            left: 5rem;
-            font-size: 2.5rem;
-            padding: 2rem 2rem 2rem 2rem;
-            text-align: center;
-            border-radius: 1rem;
+        &::after{
+            content: '';
             position: absolute;
-            box-shadow: .2rem .2rem .2rem .2rem;
-            background: v.$verde;
+            width: 90%;
+            height: 16rem;
+            right: 6.3rem;
+            background: v.$azul;
+            z-index: -1;
 
-            @include m.escritorio{
-                width: 55rem;
-                top: 5rem;
+            @include m.escritorioHD{
+                right: 6rem;
             }
-
-            @include m.telefono{
-                height: 20rem;
-                width: 32rem;
-            }
-
-            #relativo{
-                position: relative;
-                #texto{
-                    @include m.resaltar(v.$blanco, 700);
-                }
-            }
-        }
-    }
-
-    #seccion04{
-        width: 100%;
-        height: 90rem;
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row-reverse;
-        background: v.$blanco;
-
-        @include m.escritorio{
-            height: 100rem;
-        }
-
-        @include m.telefono{
-            height: 130rem;
-        }
-
-        #cont-imagen2{
-            width: 100rem;
-            height: 30rem;
-            background: v.$verde;
-            top: 5rem;
-            left: 8rem;
-            border-radius: 2rem 2rem 0 0; 
-            border: 2px solid v.$azul;
-            position: absolute;
-
-            @include m.escritorio{
-                left: 2.5rem;
-                height: 25rem;
-                width: 60rem;
-            }
-
             @include m.tablet{
-                left: .8rem;
+                right: 3.8rem;
             }
-
             @include m.telefono{
-                width: 40rem;
-            }
-
-            .detective2{
-                width: 30%;
-                height: 90%;
-                margin-top: 3rem;
-
-                @include m.escritorio{
-                    margin-top: 2.5rem;
-                }
-
-                @include m.telefono{
-                    width: 45%;
-                }
+                right: 2rem;
             }
         }
 
-        #cuadro_texto{
-            width: 100rem;
+        @include m.tablet{
+            margin-left: 7rem;
+        }
+
+        @include m.telefono{
+            margin-left: 3rem;
+        }
+
+        .detective2{
+            position: relative;
+            width: 30%;
+            height: 50%;
+        }
+
+        #cuadro-texto{
+            width: 100%;
             height: 50rem;
+            bottom: 1rem;
+            position: relative;
             background: v.$blanco;
-            border-radius: 0 0 2rem 2rem;
-            border: 2px solid v.$azul;
-            text-align: left;
-            position: absolute;
-            top: 35rem;
-            left: 8rem;
-            padding: 4rem;
+            border-right: medium double v.$azul3;
 
-            @include m.escritorio{
-                top: 30rem;
-                left: 2.5rem;
-                width: 60rem;
+            @include m.tablet{
                 height: 60rem;
             }
 
-            @include m.tablet{
-                left: .8rem;
-            }
-
             @include m.telefono{
-                width: 40rem;
-                height: 95rem;
+                height: 120rem;
             }
 
-            #relativo{
+            #titulo{
                 position: relative;
-
-                #titulo{
-                    font-size: 2.6rem;
-                    text-align: center;
-                    padding-bottom: 5rem;
-                    @include m.resaltar(v.$azul, 700);
-                }
-
-                #lista{
-                    font-size: 2.1rem;
-                    margin-left: 5rem;
-                    @include m.resaltar(v.$azul, 300);
-                }
-            }
-        }
-    }
-
-    #seccion05{
-        width: 100%;
-        height: 15rem;
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row-reverse;
-        background: v.$gris;
-
-        @include m.escritorio{
-            height: 20rem;
-        }
-
-        @include m.telefono{
-            height: 20rem;
-        }
-
-        #c_texto{
-            width: 70rem;
-            height: 10rem;
-            left: 20rem;
-            font-size: 2.7rem;
-            padding: 2rem 2rem 2rem 2rem;
-            text-align: center;
-            position: absolute;
-            background: v.$gris;
-
-            @include m.escritorio{
-                left: 1rem;
-            }
-
-            @include m.tablet{
-                left: .1rem;
-            }
-
-            @include m.telefono{
-                height: 20rem;
-                width: 32rem;
                 top: 3rem;
-                left: 5rem;
+                font-size: 2.6rem;
+                text-align: center;
+                padding-bottom: 5rem;
+                @include m.resaltar(v.$azul, 700);
             }
 
-            #relativo{
+            #lista{
                 position: relative;
-                #texto{
-                    @include m.resaltar(v.$blanco, 700);
-                }
+                top: 4rem;
+                right: 1rem;
+                font-size: 2.1rem;
+                margin-left: 5rem;
+                @include m.resaltar(v.$azul, 300);
+
+
             }
         }
     }
-
-    #seccion6{
-        width: 100%;
-        height: 40rem;
-        overflow: hidden;
+    .lupa{
         position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row-reverse;
-        background: v.$azul3;
+        top: -10rem;
+        left: 20rem;
+        width: 20%;
+        height: 30%;
 
-        #cont-dialogo{
-            width: 40rem;
-            height: 20rem;
-            background-color: v.$rojo;
-            position: absolute;
-            top: 10rem;
-            left: 40rem;
-            text-align: left;
-            font-size: 2rem;
-
-            @include m.telefono{
-                width: 35rem;
-                left: 4rem;
-                top: 14rem;
-            }
-
-            #dialogo{
-                height: 18rem;
-                margin-top: 1rem;
-                margin-left: 1rem;
-                margin-bottom: 1rem;
-                margin-right: 1rem;
-                border-radius: 2rem;
-                background: v.$azul;
-                padding: 2rem 2rem 2rem 2rem;
-
-                #relativo{
-                    position: relative;
-        
-                    #texto{
-                        @include m.resaltar(v.$azul, 400);
-                    }
-                }
-            }
+        @include m.tablet{
+            top: -4rem;
+            left: 15rem;
+        }
+        @include m.telefono{
+            width: 30%;
+            height: 40%;
+            top: -4rem;
+            left: 10rem;
         }
     }
+}
 
+#seccion5{
+    width: 100%;
+    height: 15rem;
+    position: relative;
+    background-color: v.$gris;
+    display: inline-block;
+    z-index: -1;
+    @include m.fondoCirculos;
+
+    @include m.telefono{
+        height: 23rem;
+    }
+
+    #texto{
+        position: relative;
+        text-align: center;
+        font-size: 4rem;
+        text-shadow: black 0.1em 0.1em 0.2em;
+        top: 2rem;
+        @include m.resaltar(v.$blanco, 700);
+    }
+
+}
+
+#seccion6{
+    margin-left: 30rem;
+    margin-top: 7rem;
+
+    @include m.tablet{
+        margin-left: 17rem;
+    }
+    @include m.telefono{
+        margin-left: 1rem;
+    }
+    .desplegable01{
+        width: 50%;
+        height: 50%;
+
+        @include m.tablet{
+            width: 70%;
+            height: 70%;
+        }
+        @include m.telefono{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .desplegable02{
+        width: 50%;
+        height: 50%;
+
+        @include m.tablet{
+            width: 70%;
+            height: 70%;
+        }
+        @include m.telefono{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
 }

@@ -122,3 +122,79 @@
 
     }
 }
+
+@mixin cont_pop ($fondo, $marginTop, $marginLeft, $marginBottom, $textAling) {
+    margin-top: $marginTop;
+    margin-left: $marginLeft;
+    margin-bottom: $marginBottom;
+    border: 5px solid v.$blanco;
+    background: $fondo;
+    text-align: $textAling;
+    width: 40rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 10px 11px 5px -4px rgba(0,0,0,0.55);
+    position: relative;
+
+    @include escritorioHD(){
+        margin-left: 17rem;
+        text-align: left;
+    }
+
+    @include tablet(){
+        margin-left: 5rem;
+        text-align: left;
+    }
+
+    @include telefono(){
+        text-align: center;
+        width: 30rem;
+        margin-left: 1rem;
+        margin-top: $marginTop + 9rem;
+    }
+}
+
+@mixin pop{
+    margin-left: 7rem;
+    border-radius: 0 2rem 2rem 0;
+    background: v.$blanco;
+    padding: 3rem 3rem 3rem 3rem;
+}
+
+@mixin circulo ($fondo, $top, $paddT){
+    width: 15rem;
+    height: 15rem;
+    top: $top;
+    left: 48rem;
+    text-align: center;
+    font-size: 4rem;
+    padding-top: $paddT;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 10px 11px 10px -4px rgba(0,0,0,0.55);
+    background: $fondo;
+
+    @include escritorioHD(){
+        left: 70rem;
+    }
+
+    @include tablet(){
+        left: 48rem;
+    }
+
+    @include telefono(){
+        width: 10rem;
+        height: 10rem;
+        left: 12rem;
+        font-size: 2rem;
+    }
+
+}
+
+@mixin icon ($width, $height){
+    width: $width;
+    height: $height;
+    top: 2rem;
+    left: 1rem;
+    position: absolute;
+}
